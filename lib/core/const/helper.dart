@@ -13,7 +13,7 @@ class api {
     }
     print('url=$url body=$Body token=$token');
     http.Response response = await http.get(Uri.parse(url), headers: headers);
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200 || response.statusCode == 201) {
       return jsonDecode(response.body);
     } else {
       throw Exception(
